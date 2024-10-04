@@ -159,6 +159,18 @@
 <p>下载wheel网址：<a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/torch_stable.html">download.pytorch.org&#x2F;whl&#x2F;torch_stable.html</a></p>
 <p>找到 torch-1.8.0+cu111-cp39-cp39-win_amd64.whl</p>
 <p>cu代表cuda版本，torch-1.7.0代表torch版本，cp39代表python版本</p>
+<h4>5.Pycahrm配置Conda环境
+
+<p>先创建一个新conda环境</p>
+<p><code>conda create -n name python=3.8</code></p>
+<p>设置-python解释器-conda环境</p>
+<p>出现找不到坏境的问题解决方法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61635017/article/details/130283846">https://blog.csdn.net/m0_61635017/article/details/130283846</a></p>
+<h5>一般来说
+
+<p>1.在conda环境里面建一个新环境</p>
+<p>2.根据python版本安装pytorch，cuda，cudnn等版本</p>
+<p>3.在pycahrm里面设置新建的解释器</p>
+<hr>
 <blockquote>
 <p>部分命令：</p>
 </blockquote>
@@ -174,6 +186,11 @@
 <p>5.查看电脑是否安装上显卡GPU</p>
 <p><code>import torch   *#查看torch版本* </code></p>
 <p><code>print(torch.cuda.is_available())</code></p>
+<hr>
+<h5>额外
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_50140251/article/details/120299206">no module named ‘apex‘ 的解决方案_未解析的引用 ‘apex-CSDN博客</a></p>
+<p>no module named ‘apex’ 解决方案</p>
 
       </section>
 
