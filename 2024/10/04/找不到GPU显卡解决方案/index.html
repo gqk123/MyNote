@@ -24,7 +24,7 @@
 
   
 
-  <title>两篇双模态语音情感的顶会感悟 | GQK的学习笔记</title>
+  <title>找不到GPU显卡解决方案 | GQK的学习笔记</title>
 
   
 
@@ -101,11 +101,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">两篇双模态语音情感的顶会感悟</h1>
+          <h1 class="title-wrap">找不到GPU显卡解决方案</h1>
           <h2 class="title-sub-wrap">
             <strong>GQK</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-09-24T03:16:30.000Z" itemprop="datePublished">2024-09-24</time>
+            <time  class="article-date" datetime="2024-10-04T11:15:02.000Z" itemprop="datePublished">2024-10-04</time>
           </h2>
           
           
@@ -136,26 +136,45 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2>两篇双模态语音情感的顶会感悟
+        <h2>找不到GPU显卡解决方案
 
-<h5>1.KEY-SPARSE TRANSFORMER FOR MULTIMODAL SPEECH EMOTION RECOGNITION
+<h4>1.下载对应版本的Cuda+cuDNN+pytorch
 
-<h5> ICASSP（顶会）</h5>2022年 IEEE | DOI: 10.1109/ICASSP43922.2022.9746598
+<blockquote>
+<p>我的电脑GPU是3050ti，win11系统</p>
+<p>下载的Cuda版本是CUDA Toolkit 11.1.1</p>
+<p>cunDNN版本是cuDNN v8.1.1</p>
+<p>pytorch版本是1.8.0</p>
+<p>版本链接:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41112170/article/details/122049699">Windows 11+RTX3050Ti安装CUDA、cuDNN与Pytorch的正确版本-CSDN博客</a></p>
+</blockquote>
+<h4>2.CUDA Toolkit 11.1.1 
 
-<h5>2.Focus-attention-enhanced Crossmodal Transformer with Metric Learning for
-Multimodal Speech Emotion Recognition
+<p>下载链接：<a href="https://links.jianshu.com/go?to=https://link.zhihu.com/?target=https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+<p>教程：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d90f89b5ef19">win11安装cudatoolkit11.1与cudnn8.0.4 - 简书 (jianshu.com)</a></p>
+<h4>3.cuDNN v8.1.1
 
-<h5>Interspeech(顶会) 2023年
+<p>下载地址<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN 档案 |NVIDIA 开发人员</a></p>
+<h4>4.pytorch 1.8.0
 
+<p>下载wheel网址：<a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/torch_stable.html">download.pytorch.org&#x2F;whl&#x2F;torch_stable.html</a></p>
+<p>找到 torch-1.8.0+cu111-cp39-cp39-win_amd64.whl</p>
+<p>cu代表cuda版本，torch-1.7.0代表torch版本，cp39代表python版本</p>
+<blockquote>
+<p>部分命令：</p>
+</blockquote>
+<p>1.查看支撑CUDA的最大版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure>
 
-
-<p><strong>总结一下两年文章的共性</strong></p>
-<p><img src="/MyNote/images/%E6%A8%A1%E5%9E%8B%E5%9B%BE1.jpg" alt="第一篇论文的模型图"></p>
-<p><img src="/MyNote/images/%E6%A8%A1%E5%9E%8B%E5%9B%BE4.jpg" alt="第二篇论文模型图"></p>
-<p>1.使用双模态确实可以提升语音情感识别的精度，<strong>两篇论文都是使用Roberta作为文本的预训练模型，Wav2vec作为语音端的与训练模型</strong>。后续都是在transformer基础上作了改进。这可以是后续研究的一个思路。</p>
-<p>2.还有一个两篇论文提出的创新点都是在关注<strong>最能表达的情感</strong>的词语，忽略掉其他不重要的边缘词，并在两个模态上<strong>同一位置</strong>相互加强情感词的重要性。</p>
-<p>下面是论文一模型整体图</p>
-<p><img src="/MyNote/images/%E6%A8%A1%E5%9E%8B%E5%9B%BE2.jpg" alt="模型图2"></p>
+<p>2.查看CUDA版本命令</p>
+<p><code>nvcc --version</code></p>
+<p>3.查看torch版本命令</p>
+<p><code>import torch   *#查看torch版本* </code></p>
+<p><code>print(torch.__version__)  #注意是双下划线</code></p>
+<p>4.卸载pytorch指定版本</p>
+<p><code>pip uninstall torch==版本号</code></p>
+<p>5.查看电脑是否安装上显卡GPU</p>
+<p><code>import torch   *#查看torch版本* </code></p>
+<p><code>print(torch.cuda.is_available())</code></p>
 
       </section>
 
@@ -163,20 +182,20 @@ Multimodal Speech Emotion Recognition
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/MyNote/2024/10/04/%E6%89%BE%E4%B8%8D%E5%88%B0GPU%E6%98%BE%E5%8D%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">找不到GPU显卡解决方案</h2>
+        <a href="/MyNote/2024/09/24/%E4%B8%A4%E7%AF%87%E5%8F%8C%E6%A8%A1%E6%80%81%E8%AF%AD%E9%9F%B3%E6%83%85%E6%84%9F%E7%9A%84%E9%A1%B6%E4%BC%9A%E6%84%9F%E6%82%9F/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">两篇双模态语音情感的顶会感悟</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
